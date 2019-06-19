@@ -10,34 +10,67 @@
         android:id="@+id/tv_base_use"
         android:layout_width="0dp"
         android:layout_height="80dp"
+        app:layout_constraintHorizontal_weight="1"
         android:textSize="16dp"
         android:textColor="@color/color_white"
         android:background="@color/common_color"
-        android:visibility="gone"
+        android:visibility="visible"
         android:gravity="center"
         android:text="ViewPager基础使用"
         android:padding="10dp"
         android:layout_margin="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/tv_nav"
-        app:layout_constraintWidth_percent="0.45"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_nav"
         android:layout_width="0dp"
         android:layout_height="80dp"
+        app:layout_constraintHorizontal_weight="1"
         android:textSize="16dp"
         android:textColor="@color/color_white"
         android:background="@color/common_color"
         android:gravity="center"
         android:text="ViewPager 导航联动 带角标"
         android:padding="10dp"
-        app:layout_constraintWidth_percent="0.45"
         android:layout_margin="8dp"
         app:layout_constraintLeft_toRightOf="@id/tv_base_use"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_banner"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:textSize="16dp"
+        android:textColor="@color/color_white"
+        android:background="@color/common_color"
+        android:visibility="visible"
+        android:gravity="center"
+        android:text="ViewPager 轮播图"
+        android:padding="10dp"
+        android:layout_margin="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_base_use"
+        app:layout_constraintRight_toLeftOf="@+id/tv_refresh" />
+
+    <TextView
+        android:id="@+id/tv_refresh"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:textSize="16dp"
+        android:textColor="@color/color_white"
+        android:background="@color/common_color"
+        android:gravity="center"
+        android:text="ViewPager 刷新"
+        android:padding="10dp"
+        android:layout_margin="8dp"
+        app:layout_constraintLeft_toRightOf="@id/tv_banner"
+        app:layout_constraintTop_toBottomOf="@id/tv_nav"
+        app:layout_constraintRight_toRightOf="parent"/>
+
 
 </android.support.constraint.ConstraintLayout>

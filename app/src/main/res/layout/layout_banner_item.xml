@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp">
+
+    <ImageView
+        android:id="@+id/iv_banner_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@color/common_color"
+        />
+
+    <TextView
+        android:id="@+id/tv_banner_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1b606060"
+        android:textColor="@color/color_white"
+        android:text="为什么说 5G 是物联网的时代？"
+        android:lines="2"
+        android:layout_gravity="bottom"
+        android:padding="12dp"
+        />
+
+</FrameLayout>

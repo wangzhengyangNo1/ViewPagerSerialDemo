@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.wzhy.viewpagerserial">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".VpsApplication"
         android:allowBackup="true"
@@ -13,10 +15,16 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".nav.NavActivity"
-            android:label="ViewPager 导航联动 带角标"/>
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".banner.BannerActivity"
+            android:label="ViewPager 轮播图" />
+
+        <activity
+            android:name=".nav.NavActivity"
+            android:label="ViewPager 导航联动 带角标" />
+
+        <activity android:name=".MainActivity" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
