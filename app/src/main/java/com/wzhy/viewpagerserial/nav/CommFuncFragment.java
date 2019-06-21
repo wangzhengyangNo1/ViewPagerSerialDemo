@@ -12,7 +12,8 @@ import android.widget.TextView;
 import com.wzhy.viewpagerserial.R;
 
 /**
- *
+ * ViewPager 导航联动：公共导航页面
+ * @see {@link NavActivity}
  */
 public class CommFuncFragment extends BaseFuncFragment {
 

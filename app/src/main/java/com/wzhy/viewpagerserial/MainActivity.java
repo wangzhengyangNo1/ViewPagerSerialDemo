@@ -10,6 +10,9 @@ import com.wzhy.viewpagerserial.banner.BannerActivity;
 import com.wzhy.viewpagerserial.base.BaseActivity;
 import com.wzhy.viewpagerserial.nav.NavActivity;
 
+/**
+ * 主界面
+ */
 public class MainActivity extends BaseActivity {
 
     private TextView mTvBaseView;

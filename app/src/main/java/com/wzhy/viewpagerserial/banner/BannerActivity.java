@@ -24,6 +24,11 @@ import com.wzhy.viewpagerserial.base.BaseActivity;
 
 import java.util.ArrayList;
 
+/**
+ * 真正意义的无限轮播
+ *
+ * @see {@link com.wzhy.viewpagerserial.MainActivity}
+ */
 public class BannerActivity extends BaseActivity {
 
     private ViewPager mVpBanner;

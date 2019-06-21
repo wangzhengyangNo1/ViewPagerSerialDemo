@@ -20,6 +20,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * ViewPager 导航联动
+ * @see {@link com.wzhy.viewpagerserial.MainActivity}
+ * @see {@link CommFuncFragment}
+ */
 public class NavActivity extends BaseActivity {
 
     private HorizontalScrollView mHsvNavBar;
@@ -186,49 +191,49 @@ public class NavActivity extends BaseActivity {
             });
         }
 
-mVpContent.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
-    private int lastPost = 0;
+        mVpContent.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            private int lastPost = 0;
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
 
-        if (Math.abs(position - lastPost) > 0) {
-            int llPos = lastPost;
-            int lrPos = lastPost == mFuncEntityList.size() - 1 ? lastPost : lastPost + 1;
-            int clPos = position;
-            int crPos = position == mFuncEntityList.size() - 1 ? position : position + 1;
-            if (llPos != clPos && llPos != crPos) {
-                mLlTabGroup.getChildAt(llPos).findViewById(R.id.tv_tab_name).setAlpha(0.6f);
+                if (Math.abs(position - lastPost) > 0) {
+                    int llPos = lastPost;
+                    int lrPos = lastPost == mFuncEntityList.size() - 1 ? lastPost : lastPost + 1;
+                    int clPos = position;
+                    int crPos = position == mFuncEntityList.size() - 1 ? position : position + 1;
+                    if (llPos != clPos && llPos != crPos) {
+                        mLlTabGroup.getChildAt(llPos).findViewById(R.id.tv_tab_name).setAlpha(0.6f);
+                    }
+                    if (lrPos != clPos && lrPos != crPos) {
+                        mLlTabGroup.getChildAt(lrPos).findViewById(R.id.tv_tab_name).setAlpha(0.6f);
+                    }
+                }
+
+                //设置指示器位移
+                RelativeLayout leftCell = (RelativeLayout) mLlTabGroup.getChildAt(position);
+                int rightPos = position == mFuncEntityList.size() - 1 ? position : position + 1;
+                RelativeLayout rightCell = (RelativeLayout) mLlTabGroup.getChildAt(rightPos);
+                float dist = (leftCell.getWidth() + rightCell.getWidth()) / 2f;
+                float indicatorCenterX = leftCell.getLeft() + leftCell.getWidth() / 2f + dist * positionOffset;
+                int translationX = (int) (indicatorCenterX - mIndicatorView.getWidth() / 2f);
+                mIndicatorView.setTranslationX(translationX);
+
+                //水平滚动条自动滚动
+                mHsvNavBar.scrollTo((int) (indicatorCenterX - mHsvNavBar.getWidth() / 2f), 0);
+
+                //文字透明度
+                if (position != rightPos) {
+                    rightCell.findViewById(R.id.tv_tab_name).setAlpha(0.6f + 0.4f * positionOffset);
+                    leftCell.findViewById(R.id.tv_tab_name).setAlpha(1f - 0.4f * positionOffset);
+                } else {
+                    leftCell.findViewById(R.id.tv_tab_name).setAlpha(1f - 0.4f * positionOffset);
+                }
+
+                lastPost = position;
             }
-            if (lrPos != clPos && lrPos != crPos) {
-                mLlTabGroup.getChildAt(lrPos).findViewById(R.id.tv_tab_name).setAlpha(0.6f);
-            }
-        }
-
-        //设置指示器位移
-        RelativeLayout leftCell = (RelativeLayout) mLlTabGroup.getChildAt(position);
-        int rightPos = position == mFuncEntityList.size() - 1 ? position : position + 1;
-        RelativeLayout rightCell = (RelativeLayout) mLlTabGroup.getChildAt(rightPos);
-        float dist = (leftCell.getWidth() + rightCell.getWidth()) / 2f;
-        float indicatorCenterX = leftCell.getLeft() + leftCell.getWidth() / 2f + dist * positionOffset;
-        int translationX = (int) (indicatorCenterX - mIndicatorView.getWidth() / 2f);
-        mIndicatorView.setTranslationX(translationX);
-
-        //水平滚动条自动滚动
-        mHsvNavBar.scrollTo((int) (indicatorCenterX - mHsvNavBar.getWidth() / 2f), 0);
-
-        //文字透明度
-        if (position != rightPos) {
-            rightCell.findViewById(R.id.tv_tab_name).setAlpha(0.6f + 0.4f * positionOffset);
-            leftCell.findViewById(R.id.tv_tab_name).setAlpha(1f - 0.4f * positionOffset);
-        } else {
-            leftCell.findViewById(R.id.tv_tab_name).setAlpha(1f - 0.4f * positionOffset);
-        }
-
-        lastPost = position;
-    }
-});
+        });
     }
 
     private FuncEntity getCurrFuncEntity() {
