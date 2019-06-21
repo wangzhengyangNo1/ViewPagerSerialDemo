@@ -18,11 +18,13 @@
 
         <activity
             android:name=".banner.BannerActivity"
-            android:label="ViewPager 轮播图" />
+            android:label="ViewPager 轮播图"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".nav.NavActivity"
-            android:label="ViewPager 导航联动 带角标" />
+            android:label="ViewPager 导航联动 带角标"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".MainActivity" android:label="@string/app_name">
             <intent-filter>
