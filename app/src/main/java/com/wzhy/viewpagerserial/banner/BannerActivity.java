@@ -241,12 +241,14 @@ public class BannerActivity extends BaseActivity {
 
             float currX = 0;
             float dx = 0;
+            long timeMillis = 0;
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         currX = event.getX();
+                        timeMillis = System.currentTimeMillis();
                         stopAutoScroll();
                         break;
                     case MotionEvent.ACTION_MOVE:
@@ -255,7 +257,7 @@ public class BannerActivity extends BaseActivity {
                         currX = x;
                         break;
                     case MotionEvent.ACTION_UP:
-                        if (dx < 20) {
+                        if (dx < 20 && (System.currentTimeMillis() - timeMillis) < 800) {
                             int currentItem = mVpBanner.getCurrentItem();
                             BannerEntity item = mPagerAdapter.getItem(currentItem);
                             Toast.makeText(BannerActivity.this, item.getDesc(), Toast.LENGTH_SHORT).show();
