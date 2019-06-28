@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.wzhy.viewpagerserial.banner.BannerActivity;
 import com.wzhy.viewpagerserial.base.BaseActivity;
 import com.wzhy.viewpagerserial.nav.NavActivity;
+import com.wzhy.viewpagerserial.transformer.TransformerUsageActivity;
 
 /**
  * 主界面
@@ -19,6 +20,7 @@ public class MainActivity extends BaseActivity {
     private TextView mTvNav;
     private TextView mTvBanner;
     private TextView mTvRefresh;
+    private TextView mTvTransformer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class MainActivity extends BaseActivity {
         mTvNav = (TextView) findViewById(R.id.tv_nav);
         mTvBanner = (TextView) findViewById(R.id.tv_banner);
         mTvRefresh = (TextView) findViewById(R.id.tv_refresh);
+        mTvTransformer = (TextView) findViewById(R.id.tv_transformer);
     }
 
     @Override
@@ -46,6 +49,7 @@ public class MainActivity extends BaseActivity {
         mTvNav.setOnClickListener(getOnClickListener());
         mTvBanner.setOnClickListener(getOnClickListener());
         mTvRefresh.setOnClickListener(getOnClickListener());
+        mTvTransformer.setOnClickListener(getOnClickListener());
     }
 
     @Override
@@ -59,13 +63,15 @@ public class MainActivity extends BaseActivity {
                 jump2Activity(NavActivity.class);
                 break;
             case R.id.tv_banner:
-                //ViewPager 轮播to
+                //ViewPager 轮播图
                 jump2Activity(BannerActivity.class);
                 break;
             case R.id.tv_refresh:
                 //ViewPager 刷新
                 break;
-
+            case R.id.tv_transformer:
+                jump2Activity(TransformerUsageActivity.class);
+                break;
         }
     }
 

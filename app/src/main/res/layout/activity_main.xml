@@ -72,5 +72,23 @@
         app:layout_constraintTop_toBottomOf="@id/tv_nav"
         app:layout_constraintRight_toRightOf="parent"/>
 
+    <TextView
+        android:id="@+id/tv_transformer"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:textSize="16dp"
+        android:textColor="@color/color_white"
+        android:background="@color/common_color"
+        android:visibility="visible"
+        android:gravity="center"
+        android:text="PageTransformer实现页面切换效果"
+        android:padding="10dp"
+        android:layout_margin="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_banner"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
 
 </android.support.constraint.ConstraintLayout>

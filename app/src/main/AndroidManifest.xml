@@ -15,6 +15,10 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
+        <activity
+            android:name=".transformer.TransformerUsageActivity"
+            android:label="PageTransformer实现页面切换效果"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".banner.BannerActivity"
