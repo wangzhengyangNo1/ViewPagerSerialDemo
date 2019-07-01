@@ -4,6 +4,9 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+/**
+ * 缩放效果
+ */
 public class ZoomInOutTransformer implements ViewPager.PageTransformer {
 
     private static final float DEF_MIN_SCALE = 0.9f;

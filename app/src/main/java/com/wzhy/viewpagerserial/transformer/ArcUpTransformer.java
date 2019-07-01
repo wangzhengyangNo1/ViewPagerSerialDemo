@@ -4,6 +4,9 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+/**
+ * 上弧形切换效果
+ */
 public class ArcUpTransformer implements ViewPager.PageTransformer {
 
     private static final float DEF_MAX_ROTATE = 12.0f;

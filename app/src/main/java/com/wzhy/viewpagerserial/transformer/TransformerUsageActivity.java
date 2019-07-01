@@ -56,7 +56,7 @@ public class TransformerUsageActivity extends BaseActivity {
         mVpImgs.setOffscreenPageLimit(3);
 //        mVpImgs.setPageMargin(30);
 //        mVpImgs.setPageTransformer(false, new FadeInOutTransformer());
-        mVpImgs.setPageTransformer(false, new CubicInnerOverturnTransformer());
+        mVpImgs.setPageTransformer(false, new CubicOverturnTransformer());
         mPageAdapter = new PagerAdapter() {
 
             @NonNull
@@ -141,7 +141,7 @@ public class TransformerUsageActivity extends BaseActivity {
                 mVpImgs.setPageTransformer(false, new DipInTransformer());
                 break;
             case 108:
-                mVpImgs.setPageTransformer(false, new CubicOverturnTransformer());
+                mVpImgs.setPageTransformer(false, new com.wzhy.viewpagerserial.transformer.tryit.CubicOverturnTransformer());
                 break;
             case 109:
                 mVpImgs.setPageTransformer(false, new BackgroundInTransformer());

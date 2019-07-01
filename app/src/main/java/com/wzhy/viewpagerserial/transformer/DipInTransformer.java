@@ -5,6 +5,9 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 
+/**
+ * 下沉效果
+ */
 public class DipInTransformer implements ViewPager.PageTransformer {
 
 
