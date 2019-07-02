@@ -16,6 +16,7 @@ import com.wzhy.viewpagerserial.banner.BannerEntity;
 import com.wzhy.viewpagerserial.base.BaseActivity;
 import com.wzhy.viewpagerserial.transformer.tryit.BackgroundInTransformer;
 import com.wzhy.viewpagerserial.transformer.tryit.ScaleInOutTransformer;
+import com.wzhy.viewpagerserial.transformer.tryit.StackTransformer;
 
 import java.util.ArrayList;
 
@@ -53,10 +54,10 @@ public class TransformerUsageActivity extends BaseActivity {
     @Override
     public void initView() {
         mVpImgs = (ViewPager) findViewById(R.id.vp_imgs);
-        mVpImgs.setOffscreenPageLimit(3);
+//        mVpImgs.setOffscreenPageLimit(3);
 //        mVpImgs.setPageMargin(30);
 //        mVpImgs.setPageTransformer(false, new FadeInOutTransformer());
-        mVpImgs.setPageTransformer(false, new CubicOverturnTransformer());
+        mVpImgs.setPageTransformer(false, new StackTransformer());
         mPageAdapter = new PagerAdapter() {
 
             @NonNull
@@ -109,8 +110,8 @@ public class TransformerUsageActivity extends BaseActivity {
         menu.add(100, 104, 4, "FadeInOut");
         menu.add(100, 105, 5, "ZoomInOut");
         menu.add(100, 106, 6, "ScaleInOut");
-        menu.add(100, 107, 7, "Depth");
-        menu.add(100, 108, 8, "RotateY");
+        menu.add(100, 107, 7, "DipIn");
+        menu.add(100, 108, 8, "CubicOverturn");
         menu.add(100, 109, 9, "BackgroundIn");
 
         return true;
@@ -118,6 +119,9 @@ public class TransformerUsageActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        mVpImgs.clearAnimation();
+        mVpImgs.clearDisappearingChildren();
+        mPageAdapter.notifyDataSetChanged();
         switch (item.getItemId()) {
             case 101:
                 mVpImgs.setPageTransformer(false, new AccordionTransformer());
@@ -141,7 +145,7 @@ public class TransformerUsageActivity extends BaseActivity {
                 mVpImgs.setPageTransformer(false, new DipInTransformer());
                 break;
             case 108:
-                mVpImgs.setPageTransformer(false, new com.wzhy.viewpagerserial.transformer.tryit.CubicOverturnTransformer());
+                mVpImgs.setPageTransformer(false, new CubicOverturnTransformer());
                 break;
             case 109:
                 mVpImgs.setPageTransformer(false, new BackgroundInTransformer());
