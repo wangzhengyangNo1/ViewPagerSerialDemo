@@ -14,23 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
         <activity
             android:name=".transformer.TransformerUsageActivity"
+            android:label="页面切换效果"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".transformer.TransformerImplActivity"
             android:label="PageTransformer实现页面切换效果"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".banner.BannerActivity"
             android:label="ViewPager 轮播图"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".nav.NavActivity"
             android:label="ViewPager 导航联动 带角标"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".MainActivity" android:label="@string/app_name">
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

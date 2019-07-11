@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -14,7 +12,7 @@ import com.bumptech.glide.Glide;
 import com.wzhy.viewpagerserial.R;
 import com.wzhy.viewpagerserial.banner.BannerEntity;
 import com.wzhy.viewpagerserial.base.BaseActivity;
-import com.wzhy.viewpagerserial.transformer.tryit.BackgroundInTransformer;
+import com.wzhy.viewpagerserial.transformer.tryit.ParallaxTransformer;
 import com.wzhy.viewpagerserial.transformer.tryit.ScaleInOutTransformer;
 
 import java.util.ArrayList;
@@ -56,7 +54,11 @@ public class TransformerUsageActivity extends BaseActivity {
 //        mVpImgs.setOffscreenPageLimit(3);
 //        mVpImgs.setPageMargin(30);
 //        mVpImgs.setPageTransformer(false, new FadeInOutTransformer());
-        mVpImgs.setPageTransformer(true, new RiseInTransformer());
+        int transformerId = getIntent().getIntExtra("transformerId", 0);
+        String transformerName = getIntent().getStringExtra("transformerName");
+        getSupportActionBar().setTitle(transformerName);
+        setPageTransformer(transformerId);
+
         mPageAdapter = new PagerAdapter() {
 
             @NonNull
@@ -100,57 +102,62 @@ public class TransformerUsageActivity extends BaseActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-        menu.add(100, 101, 1, "Accordion");
-        menu.add(100, 102, 2, "ArcDown");
-        menu.add(100, 103, 3, "ArcUp");
-        menu.add(100, 104, 4, "FadeInOut");
-        menu.add(100, 105, 5, "ZoomInOut");
-        menu.add(100, 106, 6, "ScaleInOut");
-        menu.add(100, 107, 7, "DipIn");
-        menu.add(100, 108, 8, "CubicOverturn");
-        menu.add(100, 109, 9, "BackgroundIn");
+    private ViewPager.PageTransformer mPageTransformer;
 
-        return true;
-    }
+    private void setPageTransformer(int transformerId) {
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        mVpImgs.clearAnimation();
-        mVpImgs.clearDisappearingChildren();
-        mPageAdapter.notifyDataSetChanged();
-        switch (item.getItemId()) {
-            case 101:
-                mVpImgs.setPageTransformer(false, new AccordionTransformer());
+        boolean reverseDrawingOrder = true;
+        switch (transformerId) {
+            case R.id.btn_accordion:
+                mPageTransformer = new AccordionTransformer();
                 break;
-            case 102:
-                mVpImgs.setPageTransformer(false, new ArcDownTransformer());
+            case R.id.btn_arc_down:
+                mPageTransformer = new ArcDownTransformer();
                 break;
-            case 103:
-                mVpImgs.setPageTransformer(false, new ArcUpTransformer());
+            case R.id.btn_arc_up:
+                mPageTransformer = new ArcUpTransformer();
                 break;
-            case 104:
-                mVpImgs.setPageTransformer(false, new FadeInOutTransformer());
+            case R.id.btn_cubicOverturn_outer:
+                mPageTransformer = new CubicOverturnTransformer(90f, 0.6f);
                 break;
-            case 105:
-                mVpImgs.setPageTransformer(false, new ZoomInOutTransformer());
+            case R.id.btn_cubicOverturn_inner:
+                mPageTransformer = new CubicOverturnTransformer(-90f, 0.6f);
                 break;
-            case 106:
-                mVpImgs.setPageTransformer(false, new ScaleInOutTransformer());
+            case R.id.btn_dip_in:
+                mPageTransformer = new DipInTransformer();
                 break;
-            case 107:
-                mVpImgs.setPageTransformer(false, new DipInTransformer());
+            case R.id.btn_fade_in_out:
+                mPageTransformer = new FadeInOutTransformer();
                 break;
-            case 108:
-                mVpImgs.setPageTransformer(false, new CubicOverturnTransformer());
+            case R.id.btn_flip_horizontal:
+                mPageTransformer = new FlipHorizontalTransformer();
                 break;
-            case 109:
-                mVpImgs.setPageTransformer(false, new BackgroundInTransformer());
+            case R.id.btn_flip_vertical:
+                mPageTransformer = new FlipVerticalTransformer();
+                break;
+            case R.id.btn_rise_in:
+                mPageTransformer = new RiseInTransformer();
+                break;
+            case R.id.btn_dive_out:
+                mPageTransformer = new DiveOutTransformer();
+                reverseDrawingOrder = false;
+                break;
+            case R.id.btn_stack:
+                mPageTransformer = new StackTransformer();
+                break;
+            case R.id.btn_zoom_in_out:
+                mPageTransformer = new ZoomInOutTransformer();
+                break;
+            case R.id.btn_parallax:
+                mPageTransformer = new ParallaxTransformer();
+                break;
+            default:
+                mPageTransformer = new ScaleInOutTransformer();
                 break;
         }
-        mPageAdapter.notifyDataSetChanged();
-        return true;
+
+        mVpImgs.setPageTransformer(reverseDrawingOrder, mPageTransformer);
+
     }
 }

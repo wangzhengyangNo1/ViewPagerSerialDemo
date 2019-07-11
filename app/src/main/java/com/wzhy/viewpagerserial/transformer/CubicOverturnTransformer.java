@@ -17,7 +17,14 @@ public class CubicOverturnTransformer implements ViewPager.PageTransformer {
     public static final float DEFAULT_MAX_ROTATION = 60f;
     public static final float DEF_MIN_SCALE = 0.86f;
 
+    /**
+     * 最大旋转角度
+     */
     private float mMaxRotation = DEFAULT_MAX_ROTATION;
+
+    /**
+     * 最小缩放
+     */
     private float mMinScale = DEF_MIN_SCALE;
 
 

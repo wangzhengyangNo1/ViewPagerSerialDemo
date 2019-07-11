@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".transformer.TransformerImplActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_btn_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_accordion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="手风琴效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_arc_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="下弧形切换效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_arc_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="上弧形切换效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_cubicOverturn_outer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="立方体翻转效果_外"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_cubicOverturn_inner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="立方体翻转效果_内"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_dip_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="下沉效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_fade_in_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="淡入淡出（透明度）"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_flip_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="水平翻转效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_flip_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="竖直翻转效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_rise_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="浮出效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_dive_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="下潜效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_stack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="堆叠效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_zoom_in_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="缩放效果"
+            android:textColor="@color/color_white" />
+
+        <Button
+            android:id="@+id/btn_parallax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginRight="@dimen/fab_margin"
+            android:background="@color/common_color"
+            android:text="并行效果"
+            android:textColor="@color/color_white" />
+
+    </LinearLayout>
+
+</ScrollView>

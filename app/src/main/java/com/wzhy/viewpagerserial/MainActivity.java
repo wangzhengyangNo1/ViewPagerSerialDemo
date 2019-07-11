@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.wzhy.viewpagerserial.banner.BannerActivity;
 import com.wzhy.viewpagerserial.base.BaseActivity;
 import com.wzhy.viewpagerserial.nav.NavActivity;
+import com.wzhy.viewpagerserial.transformer.TransformerImplActivity;
 import com.wzhy.viewpagerserial.transformer.TransformerUsageActivity;
 
 /**
@@ -70,7 +71,7 @@ public class MainActivity extends BaseActivity {
                 //ViewPager 刷新
                 break;
             case R.id.tv_transformer:
-                jump2Activity(TransformerUsageActivity.class);
+                jump2Activity(TransformerImplActivity.class);
                 break;
         }
     }
