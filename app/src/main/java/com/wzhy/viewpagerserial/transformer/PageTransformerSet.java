@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,8 +17,9 @@ public class PageTransformerSet implements ViewPager.PageTransformer {
     private List<ViewPager.PageTransformer> mPageTransformerList;
 
     public PageTransformerSet(ViewPager.PageTransformer... pageTransformers) {
-        if (mPageTransformerList ==  null) {
-            mPageTransformerList = Arrays.asList(pageTransformers);
+        mPageTransformerList = new ArrayList<>();
+        for (ViewPager.PageTransformer pageTransformer : pageTransformers) {
+            mPageTransformerList.add(pageTransformer);
         }
 
     }

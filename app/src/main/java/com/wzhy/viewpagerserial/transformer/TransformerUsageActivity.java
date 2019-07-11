@@ -16,7 +16,6 @@ import com.wzhy.viewpagerserial.banner.BannerEntity;
 import com.wzhy.viewpagerserial.base.BaseActivity;
 import com.wzhy.viewpagerserial.transformer.tryit.BackgroundInTransformer;
 import com.wzhy.viewpagerserial.transformer.tryit.ScaleInOutTransformer;
-import com.wzhy.viewpagerserial.transformer.tryit.StackTransformer;
 
 import java.util.ArrayList;
 
@@ -57,7 +56,7 @@ public class TransformerUsageActivity extends BaseActivity {
 //        mVpImgs.setOffscreenPageLimit(3);
 //        mVpImgs.setPageMargin(30);
 //        mVpImgs.setPageTransformer(false, new FadeInOutTransformer());
-        mVpImgs.setPageTransformer(false, new StackTransformer());
+        mVpImgs.setPageTransformer(true, new RiseInTransformer());
         mPageAdapter = new PagerAdapter() {
 
             @NonNull
