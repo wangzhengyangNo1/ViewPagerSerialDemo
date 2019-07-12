@@ -6,9 +6,9 @@
 ![ViewPager无限轮播](https://img-blog.csdnimg.cn/20190621154833379.gif)
 
 # 2. [利用ViewPage的PagerTransformer定制页面切换效果](https://mp.csdn.net/mdeditor/95472436)
-![手风琴效果](https://img-blog.csdnimg.cn/20190712104154121.gif)
-![下弧形](https://github.com/wangzhengyangNo1/ViewPagerSerialDemo/blob/master/screenshots/ViewPager%E5%88%87%E6%8D%A2-%E4%B8%8B%E5%BC%A7%E5%BD%A2%E6%95%88%E6%9E%9C.gif)
-![上弧形](https://img-blog.csdnimg.cn/20190712104218896.gif)
+![手风琴效果](https://github.com/wangzhengyangNo1/ViewPagerSerialDemo/blob/master/screenshots/ViewPager切换-风琴效果.gif)
+![下弧形](https://github.com/wangzhengyangNo1/ViewPagerSerialDemo/blob/master/screenshots/ViewPager切换-下弧形效果.gif)
+![上弧形](https://github.com/wangzhengyangNo1/ViewPagerSerialDemo/blob/master/screenshots/ViewPager切换-上弧形效果.gif)
 ![立方翻转-外](https://img-blog.csdnimg.cn/20190712104223684.gif)
 ![立方翻转-内](https://img-blog.csdnimg.cn/201907121042306.gif)
 ![下沉效果](https://img-blog.csdnimg.cn/20190712104237640.gif)
