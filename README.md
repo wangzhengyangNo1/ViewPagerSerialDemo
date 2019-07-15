@@ -5,7 +5,7 @@
 # 2. [ViewPager打造真正意义的无限轮播](https://blog.csdn.net/wangxiaocheng16/article/details/92830906)
 ![ViewPager无限轮播](https://img-blog.csdnimg.cn/20190621154833379.gif)
 
-# 2. [利用ViewPage的PagerTransformer定制页面切换效果](https://mp.csdn.net/mdeditor/95472436)
+# 3. [利用ViewPage的PagerTransformer定制页面切换效果](https://mp.csdn.net/mdeditor/95472436)
 ![手风琴效果](https://github.com/wangzhengyangNo1/ViewPagerSerialDemo/blob/master/screenshots/ViewPager切换-风琴效果.gif)
 ![下弧形](https://github.com/wangzhengyangNo1/ViewPagerSerialDemo/blob/master/screenshots/ViewPager切换-下弧形效果.gif)
 ![上弧形](https://github.com/wangzhengyangNo1/ViewPagerSerialDemo/blob/master/screenshots/ViewPager切换-上弧形效果.gif)
