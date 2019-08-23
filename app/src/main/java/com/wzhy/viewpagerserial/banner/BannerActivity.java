@@ -23,6 +23,7 @@ import com.bumptech.glide.Glide;
 import com.wzhy.viewpagerserial.R;
 import com.wzhy.viewpagerserial.base.BaseActivity;
 import com.wzhy.viewpagerserial.scroll.FixedSpeedScroller;
+import com.wzhy.viewpagerserial.transformer.CubicOverturnTransformer;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -104,6 +105,9 @@ public class BannerActivity extends BaseActivity {
         mPagerAdapter = new BannerPagerAdapter();
         mVpBanner.setAdapter(mPagerAdapter);
 
+        //设置页面切换效果
+        mVpBanner.setPageTransformer(false, new CubicOverturnTransformer(90, 0.72f));
+        //设置页面切换速度
         setScrollForViewPager(mVpBanner);
 
         initBanner();
