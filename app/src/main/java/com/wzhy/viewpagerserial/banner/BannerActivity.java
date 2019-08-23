@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.CheckedTextView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -21,7 +22,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.wzhy.viewpagerserial.R;
 import com.wzhy.viewpagerserial.base.BaseActivity;
+import com.wzhy.viewpagerserial.scroll.FixedSpeedScroller;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 /**
@@ -101,7 +104,23 @@ public class BannerActivity extends BaseActivity {
         mPagerAdapter = new BannerPagerAdapter();
         mVpBanner.setAdapter(mPagerAdapter);
 
+        setScrollForViewPager(mVpBanner);
+
         initBanner();
+    }
+
+    private void setScrollForViewPager(ViewPager viewPager) {
+        try {
+            Field field = ViewPager.class.getDeclaredField("mScroller");
+            field.setAccessible(true);
+            FixedSpeedScroller scroller = new FixedSpeedScroller(viewPager.getContext(), new AccelerateDecelerateInterpolator());
+            field.set(viewPager, scroller);
+            scroller.setDuration(400);
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

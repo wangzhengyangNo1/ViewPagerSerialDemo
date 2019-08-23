@@ -51,7 +51,7 @@ public class TransformerUsageActivity extends BaseActivity {
     @Override
     public void initView() {
         mVpImgs = (ViewPager) findViewById(R.id.vp_imgs);
-//        mVpImgs.setOffscreenPageLimit(3);
+        mVpImgs.setOffscreenPageLimit(2);
 //        mVpImgs.setPageMargin(30);
 //        mVpImgs.setPageTransformer(false, new FadeInOutTransformer());
         int transformerId = getIntent().getIntExtra("transformerId", 0);
