@@ -27,7 +27,7 @@ public class DipInTransformer implements ViewPager.PageTransformer {
             page.setAlpha(mMinAlpha);
             page.setScaleX(mMinScale);
             page.setScaleY(mMinScale);
-            page.setPivotX(pageWidth*1f);
+            page.setPivotX(pageWidth*(0.5f + 0.5f * mMinScale));
         } else if (position <= 1f) {//(-1, 1)
             float scaleFactor = Math.max(mMinScale, 1 - Math.abs(position));
 
@@ -55,7 +55,7 @@ public class DipInTransformer implements ViewPager.PageTransformer {
             page.setAlpha(mMinAlpha);
             page.setScaleX(mMinScale);
             page.setScaleY(mMinScale);
-            page.setPivotX(pageWidth * 0f);
+            page.setPivotX(pageWidth * (0.5f - 0.5f * mMinScale));
         }
     }
 }
